@@ -1,5 +1,5 @@
-const express = require('express')
-const routes  = require('./routes')
+import express, { json } from 'express';
+import routes from './routes';
 
 class App {
     constructor() {
@@ -10,7 +10,7 @@ class App {
     }
 
     middlewares() {
-        this.app.use(express.json())
+        this.app.use(json())
     }
 
     routes() {
@@ -18,4 +18,4 @@ class App {
     }
 }
 
-module.exports = new App().app
+export default new App().app
